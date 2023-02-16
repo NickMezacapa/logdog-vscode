@@ -1,5 +1,9 @@
 out
 dist
 node_modules
+assets/*
+assets
 .vscode-test/
 *.vsix
+vsc-extension-quickstart.md
+*.txt
