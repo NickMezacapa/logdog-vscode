@@ -38,18 +38,6 @@ export default function addDecorationWithText(contentText: string, variable: str
     activeEditor.setDecorations(decorationType, []);
     activeEditor.setDecorations(decorationType, [decoration]);
 
-    // I don't know why, but every time I save the document, a new decoration is added, causing the decorations to stack on top of each other
-    // I only want one decoration per variable, regardless of how many times the user saves the document
-    // I tried to use decorationType.dispose() to remove the decoration, but it didn't work
-    // I tried to use activeEditor.setDecorations(decorationType, []) to remove the decoration, but it didn't work
-    // I tried to use activeEditor.setDecorations(decorationType, [decoration]) to remove the decoration, but it didn't work
-    // one way to fix this without using timeout is to use a global variable to store the decorationType and remove it before adding a new one
-    // I can create the global variable in this function, but I don't know how to access it in the other functions
-    // one way to access the global variable is to use the globalStoragePath, but I don't know how to use it
-    // I can use the globalStoragePath by creating a new file in the src folder,
-    // then importing the file in this function and the other functions that need to access the global variable
-    // 
-
     // remove the decoration after a set amount of time
     // the interval is 6 seconds by default, but is customizable in package.json contributes config
     const userMessageVisibilityInterval: number = vscode.workspace.getConfiguration('logdog').get('messageVisibilityInterval')!;
