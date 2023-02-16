@@ -64,9 +64,6 @@ export default async function initLogger(post: (method: string, params?: any) =>
         // the user can have a different color for log messages and function evals
         const userCustomLogColor: string | vscode.ThemeColor = vscode.workspace.getConfiguration('logdog').get('logMessageColor')!;
 
-        // if any decorations exist, remove them
-        activeEditor.setDecorations(vscode.window.createTextEditorDecorationType({}), []);
-
         // add decoration for each key if log messages are enabled
         if (vscode.workspace.getConfiguration("logdog").get("showLogExpressions") === true) {
             for (const key in updatedCache) {
@@ -104,7 +101,7 @@ export default async function initLogger(post: (method: string, params?: any) =>
         if (vscode.workspace.getConfiguration("logdog").get("showFunctionEvaluations") === true) {
             for (const key in updatedCache) {
                 if (updatedCache[key] !== undefined) {
-                    addDecorationWithText(` => ${updatedCache[key]}`, key, line, column, activeEditor, userCustomFunctionColor);
+                    addDecorationWithText(` -> ${updatedCache[key]}`, key, line, column, activeEditor, userCustomFunctionColor);
                 }
             }
         }
