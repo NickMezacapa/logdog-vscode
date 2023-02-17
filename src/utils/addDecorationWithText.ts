@@ -23,7 +23,6 @@ export default function addDecorationWithText(contentText: string, variable: str
     const decorationType = vscode.window.createTextEditorDecorationType({
         after: {
             contentText,
-            // passing in textColor parameter so we can call with different colors, user can have messages displayed in mult. colors
             color: textColor,
             margin: "0 0 0 1em",
         },
