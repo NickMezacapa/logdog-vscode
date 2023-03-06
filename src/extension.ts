@@ -46,6 +46,3 @@ export async function activate(context: vscode.ExtensionContext): Promise<void>{
 
     context.subscriptions.push(activateLogger);
 }
-
-// This method is called when your extension is deactivated
-export function deactivate() {}
