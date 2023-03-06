@@ -18,7 +18,6 @@ const util = require('util');
  */
 
 export async function activate(context: vscode.ExtensionContext): Promise<void>{
-    // create a new node:inspector session
     const session = new inspector.Session();
     session.connect();
 
