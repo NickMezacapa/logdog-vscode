@@ -20,7 +20,7 @@ LogDog is a prototyping and debugging extension for Visual Studio Code. The exte
 
 ## Works with ES6 syntax ✅
 
-![es6Function](https://github.com/NickMezacapa/logdog-vscode/blob/main/assets/es6func.gif)
+![es6Function]()
 <br>
 <br>
 
